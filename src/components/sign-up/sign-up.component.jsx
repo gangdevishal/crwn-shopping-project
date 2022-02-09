@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.util";
 import CustomButton from "../custom-button/custom-button.component";
 import FormInput from "../form-input/form-input.component";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./sign-up.style.scss";
 
 export default class SignUp extends Component {
   constructor() {
@@ -36,6 +39,7 @@ export default class SignUp extends Component {
         password: "",
         confirmPassword: "",
       });
+      toast.success("New User Registered Successfully!!!");
     } catch (error) {
       console.log(error);
     }
@@ -54,9 +58,10 @@ export default class SignUp extends Component {
         <span>Sign up with your email and password</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
+          autoFocus
             type="text"
             name="displayName"
-            label="dispaly name"
+            label="DISPLAY NAME"
             onChange={this.handleChange}
             value={displayName}
             required
@@ -64,7 +69,7 @@ export default class SignUp extends Component {
           <FormInput
             type="email"
             name="email"
-            label="email"
+            label="EMAIL"
             onChange={this.handleChange}
             value={email}
             required
@@ -72,7 +77,7 @@ export default class SignUp extends Component {
           <FormInput
             type="password"
             name="password"
-            label="password"
+            label="PASSWORD"
             onChange={this.handleChange}
             value={password}
             required
@@ -80,13 +85,24 @@ export default class SignUp extends Component {
           <FormInput
             type="password"
             name="confirmPassword"
-            label="confirm password"
+            label="CONFIRM PASSWORD"
             onChange={this.handleChange}
             value={confirmPassword}
             required
           />
           <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     );
   }
