@@ -9,6 +9,11 @@ export const addCartItem = (item) => ({
   payload: item,
 });
 
+export const removeCartItem = (item) => ({
+  type: cartActionType.REMOVE_CART_ITEM,
+  payload: item,
+});
+
 export const clearItemFromCart = (item) => ({
   type: cartActionType.CLEAR_ITEM_FROM_CART,
   payload: item,
