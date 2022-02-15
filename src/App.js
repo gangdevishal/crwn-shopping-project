@@ -47,12 +47,12 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
-          <Route
+           <Route
             path="/sign-in"
-            render={() =>
-              currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-            }
-          />
+             render={() =>
+               currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+             }
+           />
         </Switch>
       </div>
     );
