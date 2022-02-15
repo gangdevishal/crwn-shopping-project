@@ -34,7 +34,7 @@ const initialState = {
         "https://cdn.stocksnap.io/img-thumbs/960w/wellness-cosmetics_G1GDELKCV6.jpg",
       size: "large",
       id: 5,
-      linkUrl: "shop/beauty-health",
+      linkUrl: "shop/beauty_health",
     },
     {
       title: "kids",
@@ -48,7 +48,7 @@ const initialState = {
       imageUrl:
         "https://cdn.stocksnap.io/img-thumbs/960w/shoe-footwear_DUQNFOC83Q.jpg",
       id: 7,
-      linkUrl: "shop/begs-footwear",
+      linkUrl: "shop/begs_footwear",
     },
     {
       title: "jewellery",
@@ -71,14 +71,14 @@ const initialState = {
         "https://cdn.stocksnap.io/img-thumbs/960w/girl-woman_XBU0JECP7E.jpg",
       size: "large",
       id: 10,
-      linkUrl: "shop/sports-fitness",
+      linkUrl: "shop/sports_fitness",
     },
     {
       title: "food-drinks",
       imageUrl:
         "https://cdn.stocksnap.io/img-thumbs/960w/breakfast-eggs_BYXMHHNV5X.jpg",
       id: 11,
-      linkUrl: "shop/food-drinks",
+      linkUrl: "shop/food_drinks",
     },
   ],
 };
