@@ -5,6 +5,7 @@ import FormInput from "../form-input/form-input.component";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./sign-up.style.scss";
+import { SignUpContainer, Title } from "./sign-up.styles";
 
 export default class SignUp extends Component {
   constructor() {
@@ -53,8 +54,8 @@ export default class SignUp extends Component {
   render() {
     const { displayName, password, confirmPassword, email } = this.state;
     return (
-      <div className="sign-up">
-        <h2 className="title">I don't have an account</h2>
+      <SignUpContainer>
+        <Title>I don't have an account</Title>
         <span>Sign up with your email and password</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
@@ -103,7 +104,7 @@ export default class SignUp extends Component {
           draggable
           pauseOnHover
         />
-      </div>
+      </SignUpContainer>
     );
   }
 }

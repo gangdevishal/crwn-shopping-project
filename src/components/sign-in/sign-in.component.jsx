@@ -8,6 +8,7 @@ import "./sign-in.style.scss";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { ButtonsContainer, SignInContainer } from "./sign-in.styles";
 
 class SignIn extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class SignIn extends Component {
             .required("Password is required"),
         })}
         render={({ errors, status, touched }) => (
-          <div className="sign-in">
+          <SignInContainer>
             <h2 className="title">I already have an account</h2>
             <span>sign in with your email and password</span>
             <form onSubmit={this.handleSubmit}>
@@ -85,12 +86,12 @@ class SignIn extends Component {
                 component="div"
                 className="invalid-feedback"
               />
-              <div className="buttons">
+              <ButtonsContainer>
                 <CustomButton type="submit">Sign In</CustomButton>
                 <CustomButton type="button" onClick={signInWithGoogle} googleSignInButton>
                   Sign In With Google
                 </CustomButton>
-              </div>
+              </ButtonsContainer>
             </form>
             <ToastContainer
               position="top-center"
@@ -103,7 +104,7 @@ class SignIn extends Component {
               draggable
               pauseOnHover
             />
-          </div>
+          </SignInContainer>
         )}
       />
     );

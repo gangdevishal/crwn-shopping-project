@@ -3,19 +3,20 @@ import { connect } from "react-redux";
 import CollectionItems from "../../components/collection-items/collection-item.component";
 import { selectShopItemCollectionCategory } from "../../redux/shop-item-collection/shop-item-collection.selector";
 import "./collection.style.scss";
+import { CollectionPageContainer, ItemsContainer, TitleContainer } from "./collection.styles";
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection;
   console.log(collection);
   // console.log(match.params.categoryId);
   return (
-    <div className="collection-page">
-      <h2 className="title">{title}</h2>
-      <div className="items">
+    <CollectionPageContainer>
+      <TitleContainer>{title}</TitleContainer>
+      <ItemsContainer>
       {
         items.map(item => <CollectionItems key={item.id} item={item} />)
       }
-      </div>
-    </div>
+      </ItemsContainer>
+    </CollectionPageContainer>
   );
 };
 const mapStateToProps = (state, ownProps) => ({
